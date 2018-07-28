@@ -93,14 +93,16 @@ public class APIDataTask extends AsyncTask<APIRequest,Void,APIResponse> {
     private String getPostDataString(List<Pair<String, String>> params) throws UnsupportedEncodingException {
         StringBuilder result = new StringBuilder();
         boolean first = true;
-        for(Pair<String,String> pair : params){
-            if (first)
-                first = false;
-            else
-                result.append("&");
-            result.append(URLEncoder.encode(pair.first,"UTF-8"));
-            result.append("=");
-            result.append(URLEncoder.encode(pair.second, "UTF-8"));
+        if (params!= null){
+            for(Pair<String,String> pair : params){
+                if (first)
+                    first = false;
+                else
+                    result.append("&");
+                result.append(URLEncoder.encode(pair.first,"UTF-8"));
+                result.append("=");
+                result.append(URLEncoder.encode(pair.second, "UTF-8"));
+            }
         }
         return result.toString();
     }
