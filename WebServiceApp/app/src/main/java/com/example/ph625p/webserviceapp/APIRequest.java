@@ -8,8 +8,8 @@ public class APIRequest {
     Context context;
     String method;
     String url;
-    List<Pair<String,String>> postData;
-    List<Pair<String,String>> headerData;
+    List<Pair<String,String>> postData = new ArrayList<>();
+    List<Pair<String,String>> headerData = new ArrayList<>();
 
     APIRequest(Context context, String url, String method) {
         this.context = context;
