@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         this.dataview = (TextView)findViewById(R.id.data);
         //this.webView = (WebView)findViewById(R.id.webdata);
-        WebView webView = new WebView(this);
+        //WebView webView = new WebView(this);
         setContentView(webView);
 
     }
@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(APIResponse result) {
                 Log.d("Response",result.responseData);
                 dataview.setText(result.responseData);
-                //webView.loadUrl("www.google.com");
                 webView.loadUrl(result.responseData);
+                webView.loadDataWithBaseURL("", result.responseData, "text/html", "UTF-8", "");
 
             }
         }).execute(request);
