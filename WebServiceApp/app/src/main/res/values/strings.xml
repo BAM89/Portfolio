@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WebServiceApp</string>
+    <string name="box_callback">appSchema://webserviceapp.com</string>
 </resources>
